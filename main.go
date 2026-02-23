@@ -23,4 +23,12 @@ func main() {
 		log.Println(err)
 	}
 	fmt.Println(accountRegion.Region)
+
+	championMasteries, err := client.GetChampionMasteriesByAccountId(account.AccountId)
+
+	if err != nil {
+		log.Println(err)
+	}
+
+	fmt.Println(championMasteries[0].ChampionId)
 }
